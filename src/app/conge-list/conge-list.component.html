@@ -1,0 +1,73 @@
+<div class="card-box mb-30">
+  <button
+  type="button"
+  class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2"
+  routerLink="/home">
+  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+</button>
+
+  
+  <div class="pb-20">
+  
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header="name" > Name Employee </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.name }}</mat-cell>
+
+      
+      </ng-container>
+      <ng-container matColumnDef="employeeId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header > employeeId </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.employeeId.employeeId}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="startDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>startDate Conge </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.startDate}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="endDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> endDate Conge </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.endDate}}</mat-cell>
+        </ng-container>
+        
+        
+        
+        <ng-container matColumnDef="reason">
+          <mat-header-cell *matHeaderCellDef mat-sort-header > Raison </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.reason}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="etat">
+          <mat-header-cell *matHeaderCellDef mat-sort-header > etat </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.etat?.etatLibelle}}</mat-cell>
+        </ng-container>
+        
+
+      <ng-container matColumnDef="operations">
+        <mat-header-cell *matHeaderCellDef> Opérations </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+        <div>
+          
+              <button type="button" (click)="accepte(element.id) ">Accepter</button>
+              <button type="button" (click)="refuse(element.id)">Refuser</button>
+            
+            
+              
+            
+        </div>
+              
+</mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator  [pageSizeOptions]="[5, 10, 25]" [pageSize]="5" >
+    </mat-paginator>
+    
+    </div>
+  </div>

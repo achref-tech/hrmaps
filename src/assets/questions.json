@@ -1,0 +1,225 @@
+{
+    "questions": [
+        {
+        "questionText": "In Angular, you can pass data from parent component to child component using ...",
+        "options":[{
+              "text":"Input"
+              
+        },
+        {
+            "text":"@Output()",
+            "correct":true
+        },
+        {
+            "text":"Output"
+        },
+        {
+            "text":"@Input()"
+        }
+        ],
+        "explantations":"@Input() lets a parent component update data in the child component."
+        },
+        
+        {
+            "questionText": "What is a component in Angular?",
+        "options":[{
+              "text":"A web server"
+              
+        },
+        {
+            "text":"A data storage mechanism"
+            
+        },
+        {
+            "text":"A building block of the application",
+            "correct":true
+        }
+        
+        ],
+        "explantations":"Building Blocks are the components that you use as an application developer to build enterprise apps."
+
+        },
+        {
+            "questionText": "What are the key features of Angular?",
+        "options":[{
+              "text":"Development of single-page applications"
+              
+        },
+        {
+            "text":"Component-based architecture"
+            
+        },
+        {
+            "text":"Two-way data link"
+            
+        },
+        {
+            "text":"all answer are correct",
+            "correct":true
+            
+        }
+        
+        ],
+        "explantations":"Development of single-page applications,Component-based architecture and Two-way data link are all the key features of Angular? "
+
+        },
+        {
+            "questionText": "What is data binding in Angular?",
+        "options":[{
+              "text":"Styling the user interface"
+              
+        },
+        {
+            "text":"Establish a connection between the component and the DOM",
+            "correct":true
+            
+        },
+        {
+            "text":"Added event listeners"
+            
+        }
+        ],
+        "explantations":"(DOM) is the data representation of the objects that comprise the structure and content of a document on the web."
+
+        },
+        {
+            "questionText": "how can array<number> be written in TypeScript",
+        "options":[{
+              "text":"number!"
+              
+        },
+        {
+            "text":"@number"
+            
+        },
+        {
+            "text":"number[]",
+            "correct":true
+            
+        },
+        {
+            "text":"number?"
+        }
+        
+        ],
+        "explantations":"number[] is another way of writting array<number> in TypeScript"
+
+        },
+        {
+            "questionText": "What is the main advantage of using Spring Boot?",
+        "options":[{
+              "text":"Better security features"
+              
+        },
+        {
+            "text":"Increased performance"
+            
+        },
+        
+        {
+            "text":"Simplified development process",
+            "correct":true
+            
+        }
+        
+        ],
+        "explantations":"means the expedited procedure for evaluating an Interconnection Application available to small inverter-based systems that interconnect to the Distribution System"
+
+        },
+        {
+            "questionText": "What is the default embedded web server in Spring Boot?",
+        "options":[{
+              "text":"Undertow"
+              
+        },
+        {
+            "text":"Jetty"
+            
+        },
+        
+        {
+            "text":"Tomcat",
+            "correct":true
+            
+        }
+        
+        ],
+        "explantations":"It is the most popular servlet container which was used to deploy java applications, by default spring boot is built the standalone application which was running on the desktop."
+
+        },
+        {
+            "questionText": "How to set a Spring Boot dependency in a Maven project",
+        "options":[{
+              "text":"By adding the dependency in the `pom.xml` file ",
+              "correct":true
+              
+        },
+        {
+            "text":"By adding the dependency in the `build.gradle` file."
+            
+        },
+        
+        {
+            "text":"By importing the dependency directly into the source code."
+           
+            
+        }
+        
+        ],
+        "explantations":"A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration ."
+
+        },
+        {
+            "questionText": "What is the recommended way to customize configuration in a Spring Boot application?",
+        "options":[{
+              "text":"Directly modify the configuration files in the deployment directory."
+              
+              
+        },
+        {
+            "text":"Use external properties files or YAML files.",
+            "correct":true
+            
+        },
+        
+        {
+            "text":"Modify the source code of the application."
+           
+            
+        }
+        
+        ],
+        "explantations":"YAML is a human-readable data serialization language that is often used for writing configuration files"
+
+        },
+        {
+            "questionText": "What is the main functionality provided by Spring Boot?",
+        "options":[{
+              "text":"Auto Setup",
+              "correct":true
+              
+              
+        },
+        {
+            "text":"Dependency Injection"
+            
+            
+        },
+        
+        {
+            "text":"Transaction management"
+           
+            
+        },
+        {
+            "text":"Creating unit test classes"
+           
+            
+        }
+        
+        ],
+        "explantations":"pring Boot auto-configuration attempts to automatically configure your Spring application based on the jar dependencies that you have added."
+
+        }
+    ]
+}

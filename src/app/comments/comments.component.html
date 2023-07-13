@@ -1,0 +1,27 @@
+
+<mat-dialog-content>
+        <h2>Demande Client Type ID: {{ demandeClientTypeId }}</h2>
+    <div class="card" *ngFor="let comment of comments">
+        <div class="card-body" >
+            <p>{{ comment.employeeId.employeeNom }}</p><br>
+          
+            {{ comment.comment }}
+            
+        </div>
+        <button *ngIf="isDeleteAllowed(comment)"(click)="deleteComment(comment.idComm)">Supprimer</button>
+
+        
+        
+    
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center" >
+    <form [formGroup]="form" (ngSubmit)="postComment()">
+        <p><input formControlName="commentaire" placeholder="Votre Commentaire" type="text" width="100%" class="form-control">&nbsp;<button type="submit" class="btn btn-primary">Envoyer</button>
+            <button class="btn btn-secondary" (click)="cancelComment()">Annuler</button>
+    </p>
+
+  
+    </form>
+</mat-dialog-actions>

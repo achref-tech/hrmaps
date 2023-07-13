@@ -1,0 +1,19 @@
+<nav >
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a routerLink="/welcome-employee" routerLinkActive="active" class="nav-link">Back Home</a>
+    </li>
+</ul>
+</nav>
+<p>Voila details de votre demande : 
+</p>
+<div *ngIf="conge">
+<h2>Détails de la demande de congé</h2>
+<p><strong>ID :</strong> {{ conge.id }}</p>
+<p><strong>Nom :</strong> {{ conge.name }}</p>
+<p><strong>Date de début :</strong> {{ conge.startDate }}</p>
+<p><strong>Date de fin :</strong> {{ conge.endDate }}</p>
+<p><strong>Raison :</strong> {{ conge.reason }}</p>
+<p><strong>État :</strong> {{ conge.etat?.etatLibelle }}</p>
+<p><strong>ID de l'employé :</strong> {{ conge.employeeId.employeeId }}</p>
+</div>

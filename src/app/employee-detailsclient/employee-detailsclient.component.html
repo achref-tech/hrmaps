@@ -1,0 +1,26 @@
+<button
+      type="button"
+      class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2"
+      routerLink="/employee-listclient">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </button>
+<h3> Informations sur le client  </h3>
+<div class="col-6">
+    <a href =""><img [src]="convert(client.image.data)" alt="" class="img-fluid rounded-circle w-10"></a>
+    </div>
+<div>
+    <label><b>Nom de client : </b></label> {{client.clientDescription}}
+</div>
+<div>
+    <label><b>DateDebutDemande :  </b></label> {{client.clientDateDebutDemande | date : 'EEEE, dd MMMM, yyyy'}}
+</div>
+<div>
+    <label><b>DateFinDemande :  </b></label> {{client.clientDateFinDemande | date : 'EEEE, dd MMMM, yyyy'}}
+</div>
+<div>
+    <label><b>clientVolonte: </b></label> {{client.clientVolonte}}
+</div>
+
+<div>
+    <label><b>etat : </b></label> {{client.etat?.etatLibelle}}
+</div>

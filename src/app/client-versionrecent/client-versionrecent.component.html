@@ -1,0 +1,43 @@
+<div class="container" >
+    <button
+      type="button"
+      class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2"
+      routerLink="/home/client-list">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </button>
+
+
+    <div class="card">
+        <div class="card-content">
+            <h3>le client  a recenet version est : </h3>
+
+            <tr *ngIf="client.clientVolonte ==max "></tr>
+            <div class="col-6">
+                <a href =""><img [src]="convert(client[0].image.data)" alt="" class="img-fluid rounded-circle w-10"></a>
+                </div>
+            <div>
+            <div>
+                <label><b>clientDateDebutDemande : </b></label> {{client[0].clientDateDebutDemande}}
+            </div>
+            <div>
+                <label><b>clientDateFinDemande :  </b></label> {{client[0].clientDateFinDemande}}
+            </div>
+            <div>
+                <label><b>La version : </b></label> {{client[0].clientVolonte}}
+            </div>
+            
+            <div>
+                <label><b>Nom client : </b></label> {{client[0].clientDescription}}
+            </div>
+            
+            <div>
+                <label><b>etat :  </b></label> {{client[0].etat.etatLibelle}}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div> 

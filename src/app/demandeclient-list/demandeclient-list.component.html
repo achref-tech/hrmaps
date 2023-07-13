@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+    
+
+
+    
+   <button
+       type="button"
+       class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2"
+       routerLink="/home">
+       <i class="fa fa-arrow-left" aria-hidden="true"></i>
+     </button>
+ </nav> 
+ 
+ <div class="container">
+ <div class="row">
+   
+ <div *ngFor = "let DemandeClientType of typeDemandeclients " class="col-md-6 col-xl-3">
+   <div class="card-m-b-30"> 
+     <div class="card-body row ">
+       <div class="col-6">
+       <a href =""><img [src]="convert(DemandeClientType.image?.data)" alt="" class="img-fluid rounded-circle w-60"></a> 
+       </div>
+       <div class="col-6 card-title align-self-center mb-0" >
+         <h5>ID: {{DemandeClientType?.demandeClientTypeId || 'Valeur non disponible'}}</h5>
+
+         
+     
+     
+       </div>
+       
+       
+       </div>
+       <ul class="list-group list-group-flush">
+       
+         
+         <li class="list-group-item"><h5>Nom:</h5> {{DemandeClientType?.demandeclientTypeNom}}</li>
+         <li class="list-group-item"><h5>Prenom:</h5> {{DemandeClientType?.demandeclientTypePrenom}}</li>
+         <li class="list-group-item"><h5>Client id:</h5> {{DemandeClientType.membreId.membreId}}</li>
+
+ 
+         <li class="list-group-item"> <h5>Date DEmande:</h5>{{DemandeClientType.demandeclientDateDebutDemande | date: 'dd-MM-yyyy'}}</li>
+         <li class="list-group-item"><h5>Date Expiration Demande:</h5>{{DemandeClientType.demandeclientDateFinDemande | date: 'dd-MM-yyyy'}}</li>
+         <li class="list-group-item"><h5>Etat:</h5>{{DemandeClientType.etat?.etatLibelle}}</li>
+         <li class="list-group-item"><h5>Version:</h5>{{DemandeClientType.demandeclientTypeVersion}}</li>
+         <li class="list-group-item"><h5>Vote:</h5>{{DemandeClientType.note}}</li>
+         <li class="list-group-item"><h5>employee Responsable:</h5> {{DemandeClientType.employeeId.employeeNom}}</li>
+         
+        
+     
+         
+         
+       </ul>
+       <div class="card-body">
+         <button type="button" routerLink="/affecter-employee" 
+         (click)="affecteremployeedemande(DemandeClientType.demandeClientTypeId)">affecter un employee pour cette demande</button>
+         </div>
+         <div class="col-12">
+       <button type="button" (click)="likeButtonClick(DemandeClientType.demandeClientTypeId)" class="btn"
+                           style="background-color: gray;">👍</button>&nbsp;
+         <button type="button" (click)="dislikeButtonClick(DemandeClientType.demandeClientTypeId)" class="btn"
+                           style="background-color: gray;">👎</button>
+                           <button (click)=" opensweetalert(DemandeClientType.demandeClientTypeId)"
+             class="btn text-white btn-sm bg-danger mx-1 my-1">
+             <i class="fa fa-trash" aria-hidden="true"></i></button>
+                           <button   type="button" (click)="openComments(DemandeClientType.commentaires,DemandeClientType.demandeClientTypeId)"
+                           class="btn btn-dark"[disabled]="selectedDemandeClientId === DemandeClientType.demandeClientTypeId">💬</button>&nbsp;
+       <button type="button" class="btn btn-warning"
+                           (click)="accepte(DemandeClientType.demandeClientTypeId)">
+                     <i class="" aria-hidden="true">accepte demande</i> 
+      </button>
+      <button type="button" routerLink="/add-client"  class="btn float-left btn-success mb-1"
+                           (click)="affecterClientdemande(DemandeClientType.demandeClientTypeId) ">
+                             <i class="" aria-hidden="true">confirmation</i> 
+    </button>
+    <button type="button" class="btn text-white btn-sm bg-danger mx-1 my-1"
+                           (click)="refuse(DemandeClientType.demandeClientTypeId)">
+                     <i class="" aria-hidden="true">refuser demande</i> 
+      </button>
+    
+   
+   </div>
+   
+  
+ </div>

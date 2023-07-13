@@ -1,0 +1,24 @@
+<div class='bold-line'></div>
+<div class='container'>
+  <div class='window'>
+    <div class='overlay'></div>
+    <div class='content'>
+      <button
+  type="button"
+  class="btn btn-sm text-white bg-purple mr-3 mt-2 ml-2"
+  routerLink="/login"
+>
+  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  retour à la page d'Acceuil
+</button>
+      <div class='welcome'>Put Your code company here !</div>
+      <div class='subtitle'>We're almost done. Before using our services you need to put a valid code.</div>
+      <div class='input-fields'>
+        <input class="form-input" name="code"[(ngModel)]="loginObj.code" id="code" type="password" placeholder="Your code" required>
+        
+
+      </div>
+      <div><button class='ghost-round full-width'(click)="code()">OK</button></div>
+    </div>
+  </div>
+</div>

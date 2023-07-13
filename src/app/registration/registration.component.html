@@ -1,0 +1,47 @@
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1> Register Here  </h1>
+			<label for="membreAdresseMail">Email</label>
+        <input type="text" name="membreAdresseMail" [(ngModel)]="membre.membreAdresseMail"placeholder="Email " id="membreAdresseMail"
+        required #membreAdresseMail="ngModel" [class.is-invalid]="membreAdresseMail.invalid && membreAdresseMail.touched">
+        <small class="text-danger" [class.d-none]="membreAdresseMail.valid || membreAdresseMail.untouched">Email is required field</small>
+        
+        <label for="membreNom">Nom Complet</label>
+        <input type="text" name="membreNom" [(ngModel)]="membre.membreNom"placeholder="Nom" id="membreNom"
+        required #membreNom="ngModel" [class.is-invalid]="membreNom.invalid && membreNom.touched">
+        <small class="text-danger" [class.d-none]="membreNom.valid || membreNom.untouched">Nom is required field</small>
+		
+        
+        <label for="membreCell">Password</label>
+        <input type="password" name="membreCell" [(ngModel)]="membre.membreCell" placeholder="Password" id="membreCell"
+        required #membreCell="ngModel"[class.is-invalid]="membreCell.invalid && membreCell.touched" >
+        <small class="text-danger" [class.d-none]="membreCell.valid || membreCell.untouched">Password is required field</small>
+        
+        <label for="membreTel">ConfirmPassword</label>
+        <input type="password" name="membreTel" [(ngModel)]="membre.membreTel" placeholder="Confirm Password" id="membreTel"
+        required #membreTel="ngModel"[class.is-invalid]="membreTel.invalid && membreTel.touched" >
+        <small class="text-danger" [class.d-none]="(membreTel.value == membreCell.value) || membreTel.untouched">Password must be equals confirm Password</small>
+		
+        <button (click)="Register()">Register</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Existing user!? <br> Login Here </h1>
+				<button class="ghost" (click)="gotoLogin()" >Sign Up</button>
+				<p>Enter your personal details and start journey with us</p>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+

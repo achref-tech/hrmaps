@@ -1,0 +1,134 @@
+<div class="card-box pb-10">
+    <button
+      type="button"
+      class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2"
+      routerLink="/home/client-list">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </button>
+  
+    <div class="h5 pd-20 mb-4 "> </div>
+    <div class="submit-form mr-4 ml-4 pb-5">
+      <form *ngIf="client.clientId">
+        <div class="row">
+         
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-3 mt-2">
+              <label>{{"Date_Debut_Demande"| translate}} </label>
+            </div>
+            <div class="col-md-9">
+              <input
+              type="date"
+              class="form-control"
+              id="clientDateDebutDemande"
+               required
+              [(ngModel)]="client.clientDateDebutDemande"
+              name="clientDateDebutDemande"
+              
+            />
+            
+            <div class="alert alert-danger" *ngIf="client.clientDateDebutDemande>client.clientDateFinDemande">{{"Message1"| translate}}</div>
+         </div>
+         
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6"> 
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-3 mt-2">
+                 <label for="name">{{"Date_Fin_Demande"| translate}} </label>
+                </div>
+            <div class="col-md-9">
+               <input
+              type="date"
+              class="form-control"
+              id="clientDateFinDemande"
+              required
+              name="clientDateFinDemande"
+              [(ngModel)]="client.clientDateFinDemande"
+              
+              
+               >
+               
+            </div>
+          </div>
+  
+         
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-3 mt-2">
+              <label>{{"Client_Volonte"| translate}} </label>
+            </div>
+            <div class="col-md-9">
+              <textarea
+              type="text"
+              class="form-control"
+              id="clientVolonte"
+              required
+              [(ngModel)]="client.clientVolonte"
+              name="clientVolonte"
+              
+              
+               >
+               
+            ></textarea>
+         </div>
+         
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-3 mt-2">
+              <label>{{"Client_Description"| translate}}  </label>
+            </div>
+            <div class="col-md-9">
+              <textarea
+              type="text"
+              class="form-control"
+              id="clientDescription"
+              required
+              [(ngModel)]="client.clientDescription"
+              name="clientDescription"
+            ></textarea>
+         </div>
+         
+          </div>
+        </div>
+      </div>
+      
+   
+    
+      <button
+      type="button"
+      class="btn btn-danger mr-2 float-right"
+      routerLink="/home/client-list"
+    >
+      {{ "btn_annulation" | translate }}
+    </button>
+    
+        <button
+          type="submit"
+          class="btn btn-warning float-right"
+          (click)="updateClientType()"
+          
+          [disabled]="client.clientDateDebutDemande>client.clientDateFinDemande"
+        >
+          {{ "btn_modification" | translate }}
+        </button>
+    
+   
+      </form>
+    </div>
+  </div>
+  

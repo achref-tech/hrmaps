@@ -1,0 +1,52 @@
+<div class="card-box mb-30">
+    <button
+    type="button"
+    class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2"
+    routerLink="/welcome-employee">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </button>
+
+    
+    <div class="pb-20">
+    
+      <mat-table #table [dataSource]="dataSource" matSort>
+  
+        <ng-container matColumnDef="versionId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header="versionId" > Id </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.versionId }}</mat-cell>
+        
+        </ng-container>
+        <ng-container matColumnDef="versionEmplacement">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>versionEmplacement </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.versionEmplacement}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="versionLibelle">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> versionLibelle </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.versionLibelle}}</mat-cell>
+          </ng-container>
+          
+          
+          
+          <ng-container matColumnDef="versionResponsable">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > versionResponsable </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.versionResponsable}}</mat-cell>
+          </ng-container>
+          
+  
+          <ng-container matColumnDef="versionEmailResponsable">
+            <mat-header-cell *matHeaderCellDef mat-sort-header > versionEmailResponsable </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.versionEmailResponsable}}</mat-cell>
+          </ng-container>
+          
+                
+  
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+  
+      <mat-paginator  [pageSizeOptions]="[5, 10, 25]" [pageSize]="5" >
+      </mat-paginator>
+      
+      </div>
+    </div>

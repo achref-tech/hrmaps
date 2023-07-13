@@ -1,0 +1,16 @@
+<h1>Envoyer un e-mail</h1>
+    <form (submit)="sendEmail()">
+      <label>
+        Destinataire:
+        <input type="email" [(ngModel)]="to" name="to" required>
+      </label>
+      <label>
+        Sujet:
+        <input type="text" [(ngModel)]="subject" name="subject" required>
+      </label>
+      <label>
+        Message:
+        <textarea [(ngModel)]="text" name="text" required></textarea>
+      </label>
+      <button type="submit">Envoyer</button>
+    </form>

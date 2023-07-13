@@ -1,0 +1,53 @@
+{
+  "btn_ajout":"Ajouter",
+  "btn_modification":"Modifier",
+  "btn_enregister":"Enregistrer",
+  "btn_annulation":"Annuler",
+  "btn_validation":"Valider",
+  "btn_consultation":"Consulter",
+  "btn_suppression":"Supprimer",
+  "btn_details":"Détails",
+  "btn_oui":"Oui",
+  "btn_non":"Non",
+  "msg_confirmation_suppression":"Etes-vous sûr de vouloir supprimer cet enregistrement?" , 
+
+  "Type_P_title" : "Liste des Types de Participants",
+  "Type_P_add_ title" : "Ajouter Type Participants",
+  "Type_P_upd_title" : "Modifier Type Participants",
+  "Type_P_det_ title" : "Détails Type Participant",
+
+  "Type_S_title" : "Liste des Types de Salle",
+  "Type_S_add_ title" : "Ajouter Type Salle",
+  "Type_S_upd_ title" : "Modifier Type Salle",
+  "Type_S_det_ title" : "Détails Type Salle",
+
+  "Type_C_title" : "Liste des Types de Commission",
+  "Type_C_add_ title" : "Ajouter Type Commission ",
+  "Type_C_upd_ title" : "Modifier Type Commission ",
+  "Type_C_det_ title" : "Détails Type Commission ",
+
+
+
+
+  "Type_R_title" : "Liste des Types Réunions",
+  "Type_R_add_ title" : "Ajouter Type Réunion ",
+  "Type_R_det_ title" : "Détails Type Réunion ",
+  "Type_R_upd_ title" : "Modifier Type Réunion",
+
+  "listesalle_title" : "Liste des Salles",
+
+
+  "Table_Header0": "Réferance" , 
+  "Table_Header1": "Identifiant" , 
+  "Table_Header2": "Libellé" , 
+  "Table_Header3": "Description" , 
+  "Table_Header4": "Opérations" ,
+  "Table_Header5": "Libellé Arabe" , 
+  "Table_Header6": "Description Arabe",
+  "Message1": "Date Debut doit étre avant date fin ",
+  "Date_Debut_Prevue": "Date Début Prévue",
+  "Date_Fin_Prevue": " Date Fin Prévue",
+  "Reunion_objet": "Objet",
+  "Reunion_Description": "Description"
+
+}

@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <form class="form-inline my-2 my-lg-0">
+      <input type="search" (ngModelChange)="searchClient(key.value)"
+      #key ="ngModel" ngModel
+      name="key" id="searchName" class="form-control mr-sm-2" placeholder="SearchClient" required>
+  
+    </form>
+    <button
+        type="button"
+        class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2"
+        routerLink="/welcome-employee">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+  </nav> 
+  <div class="container">
+  <div class="row">
+  <div *ngFor = "let client of clients " class="col-md-6 col-xl-3">
+    <tr *ngIf="client.clientDescription == versionmax || versionmax==null">
+    <div class="card-m-b-30"> 
+      <div class="card-body row ">
+        <div class="col-6">
+        <a href =""><img [src]="convert(client.image?.data)" alt="" class="img-fluid rounded-circle w-60"></a> 
+        </div>
+        <div class="col-6 card-title align-self-center mb-0" >
+        <h5>ID : {{client?.clientId}}</h5>
+        
+        
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><h5>NOM:</h5> {{client?.clientDescription}}</li>
+          <li class="list-group-item"><h5>VOLONTE: </h5> {{client?.clientVolonte}}</li>
+  
+          <li class="list-group-item"> <h5>DDDEmande:</h5>{{client.clientDateDebutDemande | date: 'dd-MM-yyyy'}}</li>
+          <li class="list-group-item"><h5>DFDemande:</h5>{{client.clientDateFinDemande | date: 'dd-MM-yyyy'}}</li>
+          <li class="list-group-item"><h5>ETAT: </h5>{{client.etat?.etatLibelle}}</li>
+          <li class="list-group-item"><h5>VERSION: </h5>{{client.version?.versionLibelle}}</li>
+         
+          
+          
+        </ul>
+        <div class="card-body">
+          <div class="float-right btn-group btn-group-sm">
+            <button (click)=" opensweetalert(client.clientId)"
+                class="btn text-white btn-sm bg-danger mx-1 my-1">
+                <i class="fa fa-trash" aria-hidden="true"></i></button>
+              
+            <button type="button" routerLink="/employee-listclient/employee-updateclient" class="btn btn-sm text-white bg-warning mx-1 my-1" 
+                (click)="updateTypeClient(client.clientId)"> <i class="fa fa-edit"
+                  aria-hidden="true"></i>
+            </button>
+            <button type="button" routerLink="/employee-listclient/employee-affecterclient"  class="btn float-left btn-success mb-1"
+                (click)="affecterClientVersion(client.clientId)">
+                  <i class="icon-copy ion-android-add" aria-hidden="true"></i> 
+              </button>
+              <button type="button" routerLink="/employee-listclient/employee-detailsclient" (click)="clientDetails(client.clientId)"
+                            class="btn btn-warning">📝</button>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    </tr>
+   
+  </div>
+  
+        
+  
+  

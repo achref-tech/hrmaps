@@ -1,0 +1,123 @@
+<div class="card-box pb-10" style="background-color: #f2f2f2;">
+  <button
+    type="button"
+    class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2"
+    routerLink="/demande-client"
+  >
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </button>
+
+  <form [formGroup]="form" style="margin: 20px;">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>{{ "Nom" | translate }}</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="demandeclientTypeNom"
+            required
+            [(ngModel)]="demandeclientType.demandeclientTypeNom"
+            formControlName="demandeclientTypeNom"
+          ></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>{{ "Prenom" | translate }}</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="demandeclientTypePrenom"
+            required
+            [(ngModel)]="demandeclientType.demandeclientTypePrenom"
+            formControlName="demandeclientTypePrenom"
+          ></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>{{ "Version" | translate }}</label>
+          <textarea
+            type="number"
+            class="form-control"
+            id="demandeclientTypeVersion"
+            required
+            [(ngModel)]="demandeclientType.demandeclientTypeVersion"
+            formControlName="demandeclientTypeVersion"
+          ></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>{{ "Date de demande" | translate }}</label>
+          <input
+            type="date"
+            class="form-control"
+            id="demandeclientDateDebutDemande"
+            required
+            [(ngModel)]="demandeclientType.demandeclientDateDebutDemande"
+            formControlName="demandeclientDateDebutDemande"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="
+              demandeclientType.demandeclientDateDebutDemande >
+              demandeclientType.demandeclientDateFinDemande
+            "
+          >
+            {{"Message1" | translate}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>{{ "Date d'expiration de demande" | translate }}</label>
+          <input
+            type="date"
+            class="form-control"
+            id="demandeclientDateFinDemande"
+            required
+            formControlName="demandeclientDateFinDemande"
+            [(ngModel)]="demandeclientType.demandeclientDateFinDemande"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <img
+            *ngIf="imagePreview"
+            [src]="imagePreview"
+            width="100"
+            height="100"
+            alt=""
+          />
+          <input
+            style="display: none"
+            formControlName="image"
+            type="file"
+            (change)="onFileUpload($event)"
+            #selectFile
+          />
+          <button
+            (click)="selectFile.click()"
+            class="btn btn-primary"
+          >
+            Ajouter une Image
+          </button>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <button
+          type="submit"
+          class="btn btn-warning float-right"
+          (click)="adddemandeclientType()"
+          [disabled]="demandeclientType.demandeclientDateDebutDemande >
+          demandeclientType.demandeclientDateFinDemande"
+        >
+          {{ "btn_ajout" | translate }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

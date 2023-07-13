@@ -1,0 +1,24 @@
+<div style="background-color: #f2f2f2; padding: 20px;">
+  
+    <nav>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a routerLink="/demande-client" routerLinkActive="active" class="micon bi bi-house">Back Home</a>
+        </li>
+      </ul>
+    </nav>
+  
+    <p>Voici les détails de votre demande :</p>
+  
+    <div *ngIf="demandeClientType" style="margin-top: 20px;">
+      <h2>Détails de la demande de congé</h2>
+      <p><strong>votre id : </strong> {{ demandeClientType.membreId.membreId }}</p>
+      <p><strong>Nom :</strong> {{ demandeClientType.demandeclientTypeNom }}</p>
+      <p><strong>Prenom :</strong> {{ demandeClientType.demandeclientTypePrenom }}</p>
+      <p><strong>Date de début :</strong> {{ demandeClientType.demandeclientDateDebutDemande | date: 'dd-MM-yyyy' }}</p>
+      <p><strong>Date de fin :</strong> {{ demandeClientType.demandeclientDateFinDemande | date: 'dd-MM-yyyy' }}</p>
+      <p><strong>Version :</strong> {{ demandeClientType.demandeclientTypeVersion }}</p>
+      <p><strong>État :</strong> {{ demandeClientType.etat?.etatLibelle }}</p>
+      
+    </div>
+  </div>

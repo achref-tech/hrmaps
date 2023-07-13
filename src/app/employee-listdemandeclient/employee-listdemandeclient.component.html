@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+    
+
+  
+
+    
+    <button
+        type="button"
+        class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2"
+        routerLink="/welcome-employee">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+  </nav> 
+  <p> Bienvenue chez nous  :  {{ employee?.employeeNom }}</p>
+  
+  <div class="container">
+  <div class="row">
+    
+  <div *ngFor = "let TypeDemandeClient of TypeDemandeclients " class="col-md-6 col-xl-3">
+    <div class="card-m-b-30"> 
+      <div class="card-body row ">
+        <div class="col-6">
+        <a href =""><img [src]="convert(TypeDemandeClient.image?.data)" alt="" class="img-fluid rounded-circle w-60"></a> 
+        </div>
+        <div class="col-6 card-title align-self-center mb-0" >
+          <h5>ID: {{TypeDemandeClient?.demandeClientTypeId || 'Valeur non disponible'}}</h5>
+       
+        
+        
+        </div>
+        <ul class="list-group list-group-flush">
+        
+          
+          <li class="list-group-item"><h5>Nom:</h5> {{TypeDemandeClient?.demandeclientTypeNom}}</li>
+          <li class="list-group-item"><h5>Prenom:</h5> {{TypeDemandeClient?.demandeclientTypePrenom}}</li>
+          <li class="list-group-item"><h5>Client id:</h5> {{TypeDemandeClient.membreId.membreId}}</li>
+
+  
+          <li class="list-group-item"> <h5>Date DEmande:</h5>{{TypeDemandeClient.demandeclientDateDebutDemande | date: 'dd-MM-yyyy'}}</li>
+          <li class="list-group-item"><h5>Date Expiration Demande:</h5>{{TypeDemandeClient.demandeclientDateFinDemande | date: 'dd-MM-yyyy'}}</li>
+          <li class="list-group-item"><h5>Etat:</h5>{{TypeDemandeClient.etat?.etatLibelle}}</li>
+          <li class="list-group-item"><h5>Version:</h5>{{TypeDemandeClient.demandeclientTypeVersion}}</li>
+          
+          <li class="list-group-item"><h5>Vote:</h5> {{TypeDemandeClient.note}}</li>
+          <li class="list-group-item"><h5>employee Responsable:</h5> {{TypeDemandeClient.employeeId.employeeNom}}</li>
+
+
+          
+          
+        </ul>
+        <div class="card-body">
+          
+        </div>
+      </div>
+      <button type="button" (click)="likeButtonClick(TypeDemandeClient.demandeClientTypeId)" class="btn"
+                          style="background-color: gray;">👍</button>&nbsp;
+        <button type="button" (click)="dislikeButtonClick(TypeDemandeClient.demandeClientTypeId)" class="btn"
+                          style="background-color: gray;">👎</button>
+                          <button  type="button" (click)="openComments(TypeDemandeClient.commentaires,TypeDemandeClient.demandeClientTypeId)"
+                          class="btn btn-dark" >💬</button>&nbsp;
+            
+         
+            
+
+      
+       
+      
+    
+    </div>
+
+   
+  </div>
